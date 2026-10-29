@@ -1,0 +1,65 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later | Copyright (C) 2026 nazms23 */
+/* Ortak tema: Catppuccin Mocha. libadwaita renk degiskenleri ezilir,
+ * boylece tum Adw widget'lari (headerbar, popover, liste...) ayni paleti kullanir.
+ * Accent: ~/.config/accent/colors.css (varsa; dosya izlenir, canli yuklenir). */
+
+:root {
+    --ctp-base: #1e1e2e;
+    --ctp-mantle: #181825;
+    --ctp-crust: #11111b;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-surface2: #585b70;
+    --ctp-overlay0: #6c7086;
+    --ctp-overlay1: #7f849c;
+    --ctp-subtext0: #a6adc8;
+    --ctp-subtext1: #bac2de;
+    --ctp-text: #cdd6f4;
+    --ctp-red: #f38ba8;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+
+    --window-bg-color: rgba(30, 30, 46, 0.94);
+    --window-fg-color: var(--ctp-text);
+    --view-bg-color: rgba(24, 24, 37, 0.6);
+    --view-fg-color: var(--ctp-text);
+    --headerbar-bg-color: transparent;
+    --headerbar-fg-color: var(--ctp-text);
+    --headerbar-border-color: transparent;
+    --headerbar-backdrop-color: transparent;
+    --headerbar-shade-color: transparent;
+    --sidebar-bg-color: rgba(24, 24, 37, 0.85);
+    --sidebar-fg-color: var(--ctp-text);
+    --sidebar-backdrop-color: rgba(24, 24, 37, 0.85);
+    --sidebar-border-color: rgba(69, 71, 90, 0.5);
+    --card-bg-color: rgba(49, 50, 68, 0.55);
+    --card-fg-color: var(--ctp-text);
+    --popover-bg-color: var(--ctp-base);
+    --popover-fg-color: var(--ctp-text);
+    --dialog-bg-color: var(--ctp-base);
+    --dialog-fg-color: var(--ctp-text);
+    --destructive-bg-color: var(--ctp-red);
+    --destructive-fg-color: var(--ctp-base);
+    --destructive-color: var(--ctp-red);
+    --error-color: var(--ctp-red);
+    --warning-color: var(--ctp-yellow);
+    --success-color: var(--ctp-green);
+
+    /* colors.css yoksa varsayilan: Catppuccin Green */
+    --accent-bg-color: #a6e3a1;
+    --accent-color: #a6e3a1;
+    --accent-fg-color: #1e1e2e;
+    --accent2-color: #94e2d5;
+}
+
+window, .background {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+}
+
+
+tooltip {
+    background: var(--ctp-base);
+    color: var(--ctp-text);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent);
+    border-radius: 8px;
+}

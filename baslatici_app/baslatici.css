@@ -1,0 +1,177 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later | Copyright (C) 2026 nazms23 */
+/* Baslatici */
+
+window.baslatici {
+    background: transparent;
+}
+
+.baslatici-dim {
+    background: rgba(17, 17, 27, 0.28);
+}
+
+/* Hyprland layer_rule blur ile buzlu cam; karartma (dim) alani ignore_alpha ile blur disi */
+.bas-panel {
+    background: rgba(30, 30, 46, 0.86);
+    border-radius: 24px;
+    border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+    box-shadow: 0 16px 56px rgba(0, 0, 0, 0.45);
+    padding: 18px 18px 12px 18px;
+}
+
+/* Arama */
+.search {
+    min-height: 48px;
+    font-size: 16px;
+    border-radius: 16px;
+    background: rgba(49, 50, 68, 0.75);
+    padding: 0 12px;
+    border: 1px solid rgba(69, 71, 90, 0.5);
+}
+
+.search:focus-within {
+    border-color: color-mix(in srgb, var(--accent-color) 55%, transparent);
+    box-shadow: none;
+    outline: none;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--accent-color);
+    margin-left: 6px;
+}
+
+.hint {
+    font-size: 11px;
+    color: var(--ctp-overlay1);
+}
+
+.footer {
+    font-size: 11px;
+    color: var(--ctp-overlay0);
+    margin: 2px 6px 0 6px;
+}
+
+/* Favoriler alani */
+.fav-grid {
+    background: rgba(24, 24, 37, 0.45);
+    border-radius: 18px;
+    padding: 6px;
+    min-height: 96px;
+}
+
+.fav-empty {
+    margin: 4px 0 4px 0;
+}
+
+/* Kutucuklar */
+flowboxchild.tile {
+    padding: 10px 2px 8px 2px;
+    border-radius: 16px;
+    transition: background 120ms ease, box-shadow 120ms ease;
+    outline: none;
+}
+
+flowboxchild.tile:hover {
+    background: rgba(69, 71, 90, 0.45);
+}
+
+flowboxchild.tile:selected {
+    background: color-mix(in srgb, var(--accent-color) 22%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 55%, transparent);
+}
+
+.tile-label {
+    font-size: 12px;
+    color: var(--ctp-text);
+}
+
+flowboxchild.tile:selected .tile-label {
+    color: var(--accent-color);
+}
+
+.folder-icon {
+    background: rgba(69, 71, 90, 0.6);
+    border-radius: 16px;
+    padding: 4px;
+}
+
+/* Surukle-birak isaretleri */
+flowboxchild.drop-before {
+    box-shadow: inset 4px 0 0 var(--accent-color);
+}
+
+flowboxchild.drop-after {
+    box-shadow: inset -4px 0 0 var(--accent-color);
+}
+
+flowboxchild.drop-merge {
+    background: color-mix(in srgb, var(--accent-color) 32%, transparent);
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+}
+
+.all-scroll.drop-remove {
+    background: color-mix(in srgb, var(--ctp-red) 12%, transparent);
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ctp-red) 60%, transparent);
+}
+
+/* Kategori sekmeleri */
+.tabs button.tab {
+    border-radius: 12px;
+    padding: 4px 12px;
+    background: transparent;
+    color: var(--ctp-subtext0);
+    font-size: 12px;
+    min-height: 30px;
+}
+
+.tabs button.tab:hover {
+    background: rgba(69, 71, 90, 0.4);
+}
+
+.tabs button.tab:checked {
+    background: color-mix(in srgb, var(--accent-color) 22%, transparent);
+    color: var(--accent-color);
+}
+
+/* Hesap / komut karti */
+.card {
+    background: rgba(24, 24, 37, 0.6);
+    border-radius: 16px;
+    padding: 12px 16px;
+    border: 1px solid color-mix(in srgb, var(--accent-color) 35%, transparent);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.card-sub {
+    font-size: 12px;
+    color: var(--ctp-overlay1);
+}
+
+/* Klasor gorunumu */
+.back-btn {
+    border-radius: 12px;
+    padding: 4px 12px;
+    background: rgba(49, 50, 68, 0.6);
+}
+
+.back-btn.drop-before, .back-btn.drop-after, .back-btn.drop-merge {
+    background: color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+.folder-name {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--ctp-text);
+}
+
+scrollbar slider {
+    background: color-mix(in srgb, var(--accent-color) 35%, transparent);
+    min-width: 4px;
+}

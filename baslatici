@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 nazms23
+"""Baslatici: ac/kapa. Arka plan ornegi calisiyorsa GTK yuklemeden DBus ile aninda iletir."""
+import ctypes.util
+import os
+import sys
+
+APP_ID = "io.github.nazms23.Baslatici"
+
+# Hizli yol: calisan ornege dogrudan "Activate" (ac/kapa) gonder
+if len(sys.argv) == 1:
+    try:
+        from gi.repository import Gio, GLib
+        bus = Gio.bus_get_sync(Gio.BusType.SESSION, None)
+        bus.call_sync(APP_ID, "/" + APP_ID.replace(".", "/"), "org.freedesktop.Application", "Activate",
+                      GLib.Variant("(a{sv})", ({},)), None, Gio.DBusCallFlags.NO_AUTO_START, 500, None)
+        sys.exit(0)
+    except Exception:
+        pass  # calisan ornek yok: asagida baslat
+
+# gtk4-layer-shell, libwayland'den once yuklenmeli (pencereler ustunde katman olarak acilmak icin)
+LIB = ctypes.util.find_library("gtk4-layer-shell")
+if LIB and LIB not in os.environ.get("LD_PRELOAD", "") and not os.environ.get("BASLATICI_NO_LAYER"):
+    env = dict(os.environ, LD_PRELOAD=(LIB + " " + os.environ.get("LD_PRELOAD", "")).strip())
+    os.execve(sys.executable, [sys.executable, os.path.realpath(__file__)] + sys.argv[1:], env)
+
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+from baslatici_app.app import main  # noqa: E402
+
+sys.exit(main())
